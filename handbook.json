@@ -1,0 +1,377 @@
+{
+  "description": "Fictional student-handbook passages written for this course. Any resemblance to a real university's rules is coincidental; do not rely on them.",
+  "passages": [
+    {
+      "id": 1,
+      "section": "exams",
+      "lang": "en",
+      "text": "Retaking a failed examination. A student who receives a failing grade (1 to 4) may retake the examination once during the retake period, which starts no earlier than seven days after the results are announced. The retake is free of charge. A second failure means the course must be repeated the following academic year."
+    },
+    {
+      "id": 2,
+      "section": "exams",
+      "lang": "en",
+      "text": "Grading scale. Courses are graded on a ten-point scale: 10 excellent, 9 very good, 8 good, 7 highly satisfactory, 6 satisfactory, 5 sufficient, 1 to 4 insufficient. A grade of 5 or higher is a pass. The final grade is the weighted sum of the components listed in the course description."
+    },
+    {
+      "id": 3,
+      "section": "exams",
+      "lang": "en",
+      "text": "Absence from an examination. If you miss an examination for a documented reason, such as illness, submit the document to the study programme administrator within three working days. The dean's office will then schedule an individual examination date."
+    },
+    {
+      "id": 4,
+      "section": "exams",
+      "lang": "lt",
+      "text": "Egzamino perlaikymas. Studentas, gavęs nepatenkinamą įvertinimą, gali perlaikyti egzaminą vieną kartą perlaikymų laikotarpiu, kuris prasideda ne anksčiau kaip po septynių dienų nuo rezultatų paskelbimo. Perlaikymas yra nemokamas. Neišlaikius antrą kartą, dalyką reikia kartoti kitais mokslo metais."
+    },
+    {
+      "id": 5,
+      "section": "exams",
+      "lang": "en",
+      "text": "Academic misconduct. Plagiarism, unauthorised collaboration, and the use of unapproved aids during an examination are academic misconduct. A first confirmed case results in a failing grade for the course; a second case may lead to expulsion. Appeals go to the faculty ethics committee within five working days."
+    },
+    {
+      "id": 6,
+      "section": "exams",
+      "lang": "en",
+      "text": "Use of generative AI in coursework. You may use AI tools for coursework unless the course description forbids it. Any substantial AI assistance must be disclosed in a short statement at the end of the submission, naming the tool and how it was used. Undisclosed use is treated as academic misconduct."
+    },
+    {
+      "id": 7,
+      "section": "exams",
+      "lang": "en",
+      "text": "Appealing a grade. A student who disagrees with a final grade may submit a written appeal to the dean's office within seven calendar days of the grade being published. The appeal committee reviews the submitted work and the grading criteria and responds within ten working days."
+    },
+    {
+      "id": 8,
+      "section": "exams",
+      "lang": "en",
+      "text": "Course registration. Elective courses are chosen in the student information system during the registration window, which closes two weeks before the semester begins. A course runs only if at least eight students register. Changes after the window require the programme committee's approval."
+    },
+    {
+      "id": 9,
+      "section": "library",
+      "lang": "en",
+      "text": "Opening hours of the central library. The central library is open Monday to Friday from 08:00 to 21:00 and on Saturdays from 10:00 to 17:00. It is closed on Sundays and public holidays. During the examination session, weekday hours are extended to 23:00."
+    },
+    {
+      "id": 10,
+      "section": "library",
+      "lang": "en",
+      "text": "Faculty reading room. The faculty reading room on the second floor is open on weekdays from 09:00 to 19:00. It holds the course reserve collection, which can be read on site but not borrowed. The reading room closes at 15:00 on the last working day before a public holiday."
+    },
+    {
+      "id": 11,
+      "section": "library",
+      "lang": "en",
+      "text": "Borrowing and loan periods. Students may borrow up to ten books at a time. The standard loan period is 30 days and can be extended twice online unless another reader has reserved the book. Overdue items are charged at 0.10 euro per item per day."
+    },
+    {
+      "id": 12,
+      "section": "library",
+      "lang": "en",
+      "text": "Food and drink in the library. Food is not allowed in the reading rooms. Drinks in closed containers are permitted. Lockers at the entrance are available for bags and coats; a one-euro coin, returned on opening, is needed to lock them."
+    },
+    {
+      "id": 13,
+      "section": "library",
+      "lang": "en",
+      "text": "Electronic resources. Databases, e-journals, and e-books are accessible from any computer on campus. Off-campus access requires logging in with the university account through the library proxy. Downloading entire journal issues or books is prohibited by the licence agreements."
+    },
+    {
+      "id": 14,
+      "section": "library",
+      "lang": "lt",
+      "text": "Centrinės bibliotekos darbo laikas. Centrinė biblioteka dirba pirmadieniais–penktadieniais nuo 8 iki 21 val., šeštadieniais nuo 10 iki 17 val. Sekmadieniais ir švenčių dienomis biblioteka nedirba. Sesijos metu darbo dienomis biblioteka dirba iki 23 val."
+    },
+    {
+      "id": 15,
+      "section": "library",
+      "lang": "en",
+      "text": "Interlibrary loan. Books and articles not held by the university library can be requested from other Lithuanian and European libraries through the interlibrary loan service. Requests are submitted through the online form; delivery usually takes between five and fifteen working days, and some lending libraries charge a fee."
+    },
+    {
+      "id": 16,
+      "section": "it",
+      "lang": "en",
+      "text": "Wireless network. The eduroam wireless network is available in all university buildings. Sign in with your university username in the form name@students.university.lt and your usual password. The same credentials work at any other eduroam institution in Europe."
+    },
+    {
+      "id": 17,
+      "section": "it",
+      "lang": "en",
+      "text": "Moodle access. Course materials, assignments, and tests are published in the Moodle learning environment. Log in with your university account. If a course is missing from your Moodle dashboard, ask the lecturer to enrol you; the IT helpdesk cannot add students to courses."
+    },
+    {
+      "id": 18,
+      "section": "it",
+      "lang": "en",
+      "text": "Printing and copying. Printers in the library and in the computer classrooms are operated with the student card. Credit is added at the self-service terminal on the ground floor or online. A black-and-white A4 page costs 0.05 euro and a colour page 0.20 euro."
+    },
+    {
+      "id": 19,
+      "section": "it",
+      "lang": "en",
+      "text": "Password reset. If you have forgotten your university password, use the self-service reset page, which sends a verification code to the mobile number or personal email address registered in the student information system. If neither is registered, visit the IT helpdesk in room 114 with your student card."
+    },
+    {
+      "id": 20,
+      "section": "it",
+      "lang": "en",
+      "text": "IT helpdesk. The IT helpdesk is located in room 114 of the main building and is open on weekdays from 08:30 to 17:00. Requests can also be submitted by email to helpdesk@university.lt or by phone on +370 5 219 3000. Typical response time is one working day."
+    },
+    {
+      "id": 21,
+      "section": "it",
+      "lang": "lt",
+      "text": "Belaidis tinklas. Visuose universiteto pastatuose veikia belaidis tinklas eduroam. Prisijunkite su universiteto vartotojo vardu formatu vardas@students.university.lt ir įprastu slaptažodžiu. Tie patys prisijungimo duomenys veikia ir kituose Europos eduroam tinklo universitetuose."
+    },
+    {
+      "id": 22,
+      "section": "it",
+      "lang": "en",
+      "text": "Software for students. Students can install Microsoft 365, MATLAB, and the JetBrains tools free of charge through the software portal, using the university account. Licences expire when studies end. Virtual machines with a GPU for coursework can be reserved for up to 48 hours through the same portal."
+    },
+    {
+      "id": 23,
+      "section": "it",
+      "lang": "en",
+      "text": "Student email. Every student receives a mailbox at students.university.lt. Official notices, including examination results and registration deadlines, are sent only to this address. Forwarding to a personal address can be set up in the mailbox settings, but the university is not responsible for messages lost by the forwarding provider."
+    },
+    {
+      "id": 24,
+      "section": "mobility",
+      "lang": "en",
+      "text": "Erasmus+ exchange. Students may spend one or two semesters at a partner university in the Erasmus+ programme. The application window for the autumn semester closes on 1 March and for the spring semester on 1 October. Applicants need a grade average of at least 7.5 and a language certificate at B2 level."
+    },
+    {
+      "id": 25,
+      "section": "mobility",
+      "lang": "en",
+      "text": "Recognition of credits earned abroad. Courses completed at a partner university are recognised according to the learning agreement signed before departure. Changes to the agreement must be approved within five weeks of arriving at the host university. Grades are converted using the ECTS grade distribution tables."
+    },
+    {
+      "id": 26,
+      "section": "mobility",
+      "lang": "en",
+      "text": "Erasmus+ grant amounts. The monthly grant depends on the host country group: 600 euro for group 1 countries, 540 euro for group 2, and 490 euro for group 3. Students with fewer opportunities receive an additional 250 euro per month. Travel costs are covered separately for green travel."
+    },
+    {
+      "id": 27,
+      "section": "thesis",
+      "lang": "en",
+      "text": "Master's thesis deadlines. The thesis topic and supervisor are registered by 15 October of the second year. The complete thesis is submitted in the electronic system by 20 May, and the defence takes place in the first two weeks of June. Late submission is possible only with the dean's permission and a documented reason."
+    },
+    {
+      "id": 28,
+      "section": "thesis",
+      "lang": "en",
+      "text": "Thesis format. A master's thesis is between 50 and 80 pages, excluding appendices, in 12-point font with 1.5 line spacing. It must contain an abstract in Lithuanian and in English, a list of references in APA style, and a signed declaration of academic integrity."
+    },
+    {
+      "id": 29,
+      "section": "thesis",
+      "lang": "en",
+      "text": "Similarity check. Every thesis is checked for text similarity before the defence. A similarity report is sent to the supervisor and to the student. There is no fixed percentage threshold; the supervisor assesses whether overlapping text is properly cited. Improperly cited text leads to a referral to the ethics committee."
+    },
+    {
+      "id": 30,
+      "section": "thesis",
+      "lang": "lt",
+      "text": "Baigiamojo darbo terminai. Magistro darbo tema ir vadovas registruojami iki antrų studijų metų spalio 15 d. Galutinis darbas įkeliamas į elektroninę sistemą iki gegužės 20 d., o gynimas vyksta per pirmas dvi birželio savaites. Vėliau pateikti darbą galima tik dekano leidimu ir dėl dokumentais pagrįstos priežasties."
+    },
+    {
+      "id": 31,
+      "section": "thesis",
+      "lang": "en",
+      "text": "Choosing a supervisor. Supervisors are chosen from the list of faculty staff published in September. Each supervisor accepts at most five master's students per year. If your preferred supervisor is full, the programme committee assigns one with a related research interest."
+    },
+    {
+      "id": 32,
+      "section": "campus",
+      "lang": "en",
+      "text": "Room 214. Room 214 is a seminar room on the second floor of the faculty building at Naugarduko g. 24 with 30 seats, a projector, and a whiteboard. It can be booked by lecturers through the room reservation system. Student groups may book it for project meetings outside teaching hours."
+    },
+    {
+      "id": 33,
+      "section": "campus",
+      "lang": "en",
+      "text": "Room 212. Room 212 is a computer classroom on the second floor with 24 workstations running Linux and Windows. It is open to students when no class is scheduled; the timetable is posted on the door. Printing is available through the student card."
+    },
+    {
+      "id": 34,
+      "section": "campus",
+      "lang": "en",
+      "text": "Room 314. Room 314 on the third floor is the auditorium used for lectures with more than 100 participants. It has a lecture capture system; recordings are published in Moodle within two working days if the lecturer has enabled recording."
+    },
+    {
+      "id": 35,
+      "section": "campus",
+      "lang": "en",
+      "text": "Booking a room. Students can book a seminar room or a group study room through the reservation system using their university account. Bookings are for a maximum of three hours per day and must be made at least one day in advance. The auditorium and computer classrooms cannot be booked by students."
+    },
+    {
+      "id": 36,
+      "section": "campus",
+      "lang": "en",
+      "text": "Timetable. The timetable is published in the student information system two weeks before the semester starts and may change during the first two weeks of the semester. Each room number is preceded by the building code: MIF for the faculty building and CR for the central building."
+    },
+    {
+      "id": 37,
+      "section": "campus",
+      "lang": "en",
+      "text": "Lost and found. Items found in the faculty building are kept at the reception desk on the ground floor for 30 days. Lost student cards are deactivated immediately on request; a replacement card costs 6 euro and is issued within five working days at the student services office."
+    },
+    {
+      "id": 38,
+      "section": "campus",
+      "lang": "en",
+      "text": "Parking. Parking on campus requires a permit issued by the facilities office. Student permits are available only to students with a disability or with a documented medical need. Bicycle racks are located at every entrance, and the bicycle garage at the main building is accessible with the student card."
+    },
+    {
+      "id": 39,
+      "section": "campus",
+      "lang": "en",
+      "text": "Accessibility. All faculty buildings have step-free access and lifts. Students with a disability or a chronic illness can request adapted examination conditions, such as extra time or a separate room, from the student services office. Requests must be supported by a medical certificate."
+    },
+    {
+      "id": 40,
+      "section": "finance",
+      "lang": "en",
+      "text": "Tuition fee payment. Tuition fees are paid in two instalments: the first by 1 September and the second by 1 February. Payment is made by bank transfer to the account given on the invoice in the student information system. Late payment incurs a reminder fee of 15 euro."
+    },
+    {
+      "id": 41,
+      "section": "finance",
+      "lang": "en",
+      "text": "Scholarships. Incentive scholarships are awarded each semester to the students with the best results, in the amount of 150 or 250 euro per month. Social scholarships are available to students in difficult financial circumstances through the State Studies Foundation."
+    },
+    {
+      "id": 42,
+      "section": "finance",
+      "lang": "en",
+      "text": "Refund of tuition. A student who withdraws before the end of the second week of the semester is refunded the full tuition for that semester. Withdrawing later means that the fee for the semester is not refunded. Refunds are processed within 30 days."
+    },
+    {
+      "id": 43,
+      "section": "finance",
+      "lang": "lt",
+      "text": "Stipendijos. Skatinamosios stipendijos skiriamos kiekvieną semestrą geriausius rezultatus pasiekusiems studentams, po 150 arba 250 eurų per mėnesį. Socialinės stipendijos skiriamos sunkiai besiverčiantiems studentams per Valstybinį studijų fondą."
+    },
+    {
+      "id": 44,
+      "section": "housing",
+      "lang": "en",
+      "text": "Dormitory application. Places in the student dormitories are allocated in July for the following academic year. Apply through the accommodation portal; priority is given to students from outside Vilnius and to international students. The monthly fee ranges from 90 to 160 euro, depending on the building and the room type."
+    },
+    {
+      "id": 45,
+      "section": "housing",
+      "lang": "en",
+      "text": "Dormitory rules. Quiet hours in the dormitories are from 23:00 to 07:00. Guests may stay overnight for at most three nights per month after being registered at the reception. Smoking is prohibited in all rooms and common areas. Repeated violations lead to termination of the accommodation contract."
+    },
+    {
+      "id": 46,
+      "section": "housing",
+      "lang": "en",
+      "text": "Dormitory internet. Each dormitory room has a wired network socket; cables are available at the reception for a deposit of 5 euro. The wireless network in dormitories is eduroam, with the same login as on campus. Faults are reported through the IT helpdesk."
+    },
+    {
+      "id": 47,
+      "section": "wellbeing",
+      "lang": "en",
+      "text": "Psychological counselling. The university offers free, confidential psychological counselling to students. Up to eight sessions per academic year can be booked online. Appointments are usually available within one week. Urgent cases are seen on the same day by calling the counselling centre."
+    },
+    {
+      "id": 48,
+      "section": "wellbeing",
+      "lang": "en",
+      "text": "Sports. The sports centre offers group classes, a gym, and team sports. A student membership costs 15 euro per month or 120 euro per year. Registration for courses with limited places, such as climbing and yoga, opens on the first working day of each month."
+    },
+    {
+      "id": 49,
+      "section": "wellbeing",
+      "lang": "en",
+      "text": "Health insurance for international students. Students from outside the European Union must hold health insurance valid in Lithuania for the whole period of studies. Proof of insurance is required for the temporary residence permit. EU students use the European Health Insurance Card."
+    },
+    {
+      "id": 50,
+      "section": "admin",
+      "lang": "en",
+      "text": "Student services office. The student services office is on the ground floor of the central building and is open on weekdays from 09:00 to 16:00. It issues certificates of enrolment, replacement student cards, and transcripts. Certificates in English take up to three working days."
+    },
+    {
+      "id": 51,
+      "section": "admin",
+      "lang": "en",
+      "text": "Academic leave. A student may take academic leave for up to one year for health, family, or other important reasons. The request is submitted to the dean's office with supporting documents. During academic leave no tuition is charged, and the student retains the right to return to the same programme."
+    },
+    {
+      "id": 52,
+      "section": "admin",
+      "lang": "en",
+      "text": "Changing study programme. A transfer to another programme is possible after the first year if the student has no academic debts and the receiving programme has free places. The request is submitted by 15 August. Credits that match the new programme's curriculum are recognised."
+    },
+    {
+      "id": 53,
+      "section": "admin",
+      "lang": "en",
+      "text": "Dean's office contacts. The dean's office of the Faculty of Mathematics and Informatics is in room 104, Naugarduko g. 24. Phone +370 5 219 3050, email mif@university.lt. Office hours for students are Tuesday and Thursday from 13:00 to 15:00."
+    },
+    {
+      "id": 54,
+      "section": "admin",
+      "lang": "lt",
+      "text": "Akademinės atostogos. Studentas gali išeiti akademinių atostogų iki vienerių metų dėl sveikatos, šeimos ar kitų svarbių priežasčių. Prašymas su patvirtinančiais dokumentais teikiamas dekanatui. Akademinių atostogų metu mokestis už studijas neskaičiuojamas, o studentas išsaugo teisę grįžti į tą pačią programą."
+    },
+    {
+      "id": 55,
+      "section": "admin",
+      "lang": "en",
+      "text": "Certificate of enrolment. A certificate confirming your student status can be ordered in the student information system and collected at the student services office or received as a signed PDF. Certificates for the national social insurance fund and for bank purposes are issued free of charge."
+    },
+    {
+      "id": 56,
+      "section": "admin",
+      "lang": "en",
+      "text": "Graduation. Diplomas are awarded at the graduation ceremony at the end of June. Students who do not attend can collect the diploma from the student services office from the following week, in person with an identity document, or authorise another person with a notarised power of attorney."
+    },
+    {
+      "id": 57,
+      "section": "campus",
+      "lang": "en",
+      "text": "Cafeteria. The cafeteria on the ground floor of the faculty building is open on weekdays from 08:00 to 16:00. It accepts cash and cards and offers a daily lunch menu with a vegetarian option. Vending machines in the corridors are available at all times."
+    },
+    {
+      "id": 58,
+      "section": "it",
+      "lang": "en",
+      "text": "Research data storage. Research data from master's theses and projects can be stored in the university's research data repository. Each project receives 100 GB of storage by default; more can be requested. Data containing personal information must be anonymised before upload."
+    },
+    {
+      "id": 59,
+      "section": "exams",
+      "lang": "en",
+      "text": "Examination session dates. The autumn semester examination session runs from 5 to 23 January and the spring session from 1 to 19 June. Examination dates are published in the student information system at least two weeks before the session begins."
+    },
+    {
+      "id": 60,
+      "section": "library",
+      "lang": "en",
+      "text": "Study spaces. The library offers individual study carrels and ten group study rooms on the third floor. Group rooms seat four to eight people and are booked online for up to three hours. Silent study is enforced on the second floor; the ground floor allows quiet conversation."
+    },
+    {
+      "id": 61,
+      "section": "admin",
+      "lang": "lt",
+      "text": "Studento pažymėjimo atnaujinimas. Studento pažymėjimas galioja vienerius metus ir kiekvieną rugsėjį atnaujinamas studentų aptarnavimo skyriuje. Neatnaujintas pažymėjimas nuo spalio 1 d. nesuteikia nuolaidų viešajame transporte ir neatidaro dviračių saugyklos."
+    },
+    {
+      "id": 62,
+      "section": "wellbeing",
+      "lang": "lt",
+      "text": "Psichologinė pagalba. Universitetas studentams teikia nemokamas ir konfidencialias psichologo konsultacijas. Per mokslo metus galima užsiregistruoti iki aštuonių konsultacijų. Skubiais atvejais skambinkite į konsultavimo centrą: būsite priimti tą pačią dieną."
+    }
+  ]
+}

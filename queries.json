@@ -1,0 +1,382 @@
+{
+  "description": "Hand-written queries with gold passage ids. 'gold' lists every passage that answers the query; an empty list means the handbook does not answer it. Categories name the expected difficulty.",
+  "queries": [
+    {
+      "id": 1,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "Can I resit an exam I failed?",
+      "gold": [
+        1,
+        4
+      ],
+      "note": "resit vs retake"
+    },
+    {
+      "id": 2,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "How do I get my laptop online on campus?",
+      "gold": [
+        16,
+        21
+      ],
+      "note": "online vs wireless network / eduroam"
+    },
+    {
+      "id": 3,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "I forgot my login password, what do I do?",
+      "gold": [
+        19
+      ],
+      "note": "forgot/login vs forgotten/password reset"
+    },
+    {
+      "id": 4,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "Is there someone I can talk to when I feel anxious and overwhelmed?",
+      "gold": [
+        47,
+        62
+      ],
+      "note": "no shared words with 'psychological counselling'"
+    },
+    {
+      "id": 5,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "What length is expected for the dissertation?",
+      "gold": [
+        28
+      ],
+      "note": "dissertation vs thesis, length vs pages"
+    },
+    {
+      "id": 6,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "Can I get money back if I quit my studies early?",
+      "gold": [
+        42
+      ],
+      "note": "money back vs refund, quit vs withdraw"
+    },
+    {
+      "id": 7,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "Where can I leave my bike?",
+      "gold": [
+        38
+      ],
+      "note": "bike vs bicycle"
+    },
+    {
+      "id": 8,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "What happens if I'm caught cheating?",
+      "gold": [
+        5
+      ],
+      "note": "cheating vs academic misconduct"
+    },
+    {
+      "id": 9,
+      "category": "keyword",
+      "lang": "en",
+      "query": "When does the central library close on Saturday?",
+      "gold": [
+        9,
+        14
+      ],
+      "note": ""
+    },
+    {
+      "id": 10,
+      "category": "keyword",
+      "lang": "en",
+      "query": "How much does a replacement student card cost?",
+      "gold": [
+        37
+      ],
+      "note": ""
+    },
+    {
+      "id": 11,
+      "category": "keyword",
+      "lang": "en",
+      "query": "What is the Erasmus application deadline for the autumn semester?",
+      "gold": [
+        24
+      ],
+      "note": ""
+    },
+    {
+      "id": 12,
+      "category": "keyword",
+      "lang": "en",
+      "query": "How do I contact the IT helpdesk?",
+      "gold": [
+        20
+      ],
+      "note": ""
+    },
+    {
+      "id": 13,
+      "category": "keyword",
+      "lang": "en",
+      "query": "How do I add printing credit?",
+      "gold": [
+        18
+      ],
+      "note": ""
+    },
+    {
+      "id": 14,
+      "category": "identifier",
+      "lang": "en",
+      "query": "What is in room 214?",
+      "gold": [
+        32
+      ],
+      "note": "rooms 212 and 314 are distractors"
+    },
+    {
+      "id": 15,
+      "category": "identifier",
+      "lang": "en",
+      "query": "Where is room 314?",
+      "gold": [
+        34
+      ],
+      "note": "rooms 214 and 212 are distractors"
+    },
+    {
+      "id": 16,
+      "category": "identifier",
+      "lang": "en",
+      "query": "What does the building code MIF stand for?",
+      "gold": [
+        36
+      ],
+      "note": "mif also appears in the dean's email address"
+    },
+    {
+      "id": 17,
+      "category": "identifier",
+      "lang": "en",
+      "query": "What is the phone number of the dean's office?",
+      "gold": [
+        53
+      ],
+      "note": "the helpdesk passage also has a phone number"
+    },
+    {
+      "id": 18,
+      "category": "identifier",
+      "lang": "en",
+      "query": "How much is the Erasmus grant for group 2 countries?",
+      "gold": [
+        26
+      ],
+      "note": ""
+    },
+    {
+      "id": 19,
+      "category": "identifier",
+      "lang": "en",
+      "query": "Which office is in room 104?",
+      "gold": [
+        53
+      ],
+      "note": "room 104 is mentioned only in the dean's office passage"
+    },
+    {
+      "id": 20,
+      "category": "identifier",
+      "lang": "en",
+      "query": "What can I reserve for up to 48 hours?",
+      "gold": [
+        22
+      ],
+      "note": "a number as the only distinctive term"
+    },
+    {
+      "id": 21,
+      "category": "identifier",
+      "lang": "en",
+      "query": "Which service costs 6 euro?",
+      "gold": [
+        37
+      ],
+      "note": "many passages mention euro amounts"
+    },
+    {
+      "id": 22,
+      "category": "crosslingual",
+      "lang": "lt",
+      "query": "Kada galiu perlaikyti neišlaikytą egzaminą?",
+      "gold": [
+        1,
+        4
+      ],
+      "note": "answer exists in both languages"
+    },
+    {
+      "id": 23,
+      "category": "crosslingual",
+      "lang": "lt",
+      "query": "Kiek knygų galiu pasiskolinti iš bibliotekos?",
+      "gold": [
+        11
+      ],
+      "note": "answer only in English"
+    },
+    {
+      "id": 24,
+      "category": "crosslingual",
+      "lang": "lt",
+      "query": "Kaip prisijungti prie belaidžio interneto universitete?",
+      "gold": [
+        16,
+        21
+      ],
+      "note": "both languages"
+    },
+    {
+      "id": 25,
+      "category": "crosslingual",
+      "lang": "lt",
+      "query": "Iki kada reikia įkelti magistro darbą?",
+      "gold": [
+        27,
+        30
+      ],
+      "note": "both languages"
+    },
+    {
+      "id": 26,
+      "category": "crosslingual",
+      "lang": "en",
+      "query": "How do I keep my student discount on public transport?",
+      "gold": [
+        61
+      ],
+      "note": "answer only in Lithuanian"
+    },
+    {
+      "id": 27,
+      "category": "crosslingual",
+      "lang": "lt",
+      "query": "Ar bibliotekoje galima valgyti?",
+      "gold": [
+        12
+      ],
+      "note": "answer only in English"
+    },
+    {
+      "id": 28,
+      "category": "detail",
+      "lang": "en",
+      "query": "Can students book the computer classroom?",
+      "gold": [
+        35
+      ],
+      "note": "passage 33 describes the classroom; 35 says students cannot book it"
+    },
+    {
+      "id": 29,
+      "category": "detail",
+      "lang": "en",
+      "query": "Are drinks allowed in the reading room?",
+      "gold": [
+        12
+      ],
+      "note": "food is not allowed, drinks are"
+    },
+    {
+      "id": 30,
+      "category": "detail",
+      "lang": "en",
+      "query": "Can I extend a book loan a third time?",
+      "gold": [
+        11
+      ],
+      "note": "extended twice"
+    },
+    {
+      "id": 31,
+      "category": "near_duplicate",
+      "lang": "en",
+      "query": "When does the faculty reading room close before a public holiday?",
+      "gold": [
+        10
+      ],
+      "note": "central library hours are a distractor"
+    },
+    {
+      "id": 32,
+      "category": "near_duplicate",
+      "lang": "en",
+      "query": "What are the quiet hours in the dormitory?",
+      "gold": [
+        45
+      ],
+      "note": ""
+    },
+    {
+      "id": 33,
+      "category": "near_duplicate",
+      "lang": "en",
+      "query": "When is the spring examination session?",
+      "gold": [
+        59
+      ],
+      "note": "thesis defence in June is a distractor"
+    },
+    {
+      "id": 34,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "Does the university have a swimming pool?",
+      "gold": [],
+      "note": ""
+    },
+    {
+      "id": 35,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "How do I apply for a PhD position?",
+      "gold": [],
+      "note": ""
+    },
+    {
+      "id": 36,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "Is there a cinema on campus?",
+      "gold": [],
+      "note": ""
+    },
+    {
+      "id": 37,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "Where can I rent a car near the campus?",
+      "gold": [],
+      "note": ""
+    },
+    {
+      "id": 38,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "Can I bring my dog to lectures?",
+      "gold": [],
+      "note": ""
+    }
+  ]
+}
