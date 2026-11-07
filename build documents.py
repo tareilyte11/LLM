@@ -2,6 +2,28 @@
 “Know your rights” assistant for your Europe rights.
 """
 
+"""
+Build the mid-term corpus from ten Your Europe pages (European Commission).
+
+Outputs
+  my_documents/<name>.txt   one document per file, one paragraph per chunk,
+                            blank line between paragraphs (what the week 7
+                            notebook's read_documents() expects)
+  youreurope_handbook.json  the same paragraphs in the Lecture 6 format
+                            {"passages": [{"id", "section", "lang", "text"}]}
+                            so the BM25 / dense / hybrid script runs unchanged
+  SOURCES.md                URL, page date, download date, licence, changes made
+                            (kept out of my_documents/ so it is never indexed)
+  raw_html/<name>.html      cached downloads; delete one to fetch it again
+
+Run:   python build_documents.py
+If a page will not download (e.g. 403), open it in your browser, save it as
+"Webpage, HTML only" to raw_html/<name>.html, and run the script again.
+
+Licence: Your Europe content is reusable under CC BY 4.0 (Commission Decision
+2011/833/EU) with attribution and an indication of changes; SOURCES.md does both.
+"""
+
 import json
 import re
 import statistics
@@ -42,6 +64,8 @@ BOILERPLATE = {
     "claim your rights!", "warning", "on this page", "see also:",
     "choose country", "find out more", "read more", "open close", "close",
 }
+SKIP_HEADINGS = ("FAQs", "EU legislation", "See also", "Need support from assistance services")
+
 EU_COUNTRIES = {
     "austria", "belgium", "bulgaria", "croatia", "cyprus", "czechia", "denmark",
     "estonia", "finland", "france", "germany", "greece", "hungary", "ireland",
@@ -79,11 +103,42 @@ def own_text(li):
     return clean(" ".join(parts))
 
 
+def li_text(li):
+    """A list item with its sub-bullets attached: 'parent (sub 1; sub 2)'."""
+    subs = [li_text(s) for s in li.find_all("li", recursive=False) +
+            [s for ul in li.find_all(["ul", "ol"], recursive=False) for s in ul.find_all("li", recursive=False)]]
+    subs = [s for s in subs if s]
+    return own_text(li) + (f" ({'; '.join(subs)})" if subs else "")
+
+
+def table_text(table):
+    """A table as one sentence per row, each cell labelled with its column header."""
+    rows = [[clean(c.get_text(" ")) for c in tr.find_all(["th", "td"])] for tr in table.find_all("tr")]
+    rows = [r for r in rows if any(r)]
+    if len(rows) < 2:                 # header only (e.g. an interactive price tool): nothing to keep
+        return ""
+    header, body = rows[0], rows[1:]
+    lines = []
+    for r in body:
+        if len(r) == len(header):
+            lines.append(", ".join(f"{h}: {v}" for h, v in zip(header, r)))
+        else:
+            lines.append(", ".join(r))
+    return "; ".join(lines) + "."
+
+
 def extract_blocks(html):
     """Walk the page from the <h1> to the 'Last checked' line; return (heading, text) blocks."""
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript", "form", "button", "select", "svg"]):
         tag.decompose()
+    # the "Last checked: dd/mm/yyyy" box is a <div id="last-checked"><span>; turn it into a <p>
+    # so the walk below stops there (everything after it is share buttons and feedback forms)
+    box = soup.find(id="last-checked")
+    if box is not None:
+        marker = soup.new_tag("p")
+        marker.string = clean(box.get_text(" "))
+        box.replace_with(marker)
     h1 = soup.find("h1")
     if h1 is None:
         raise ValueError("no <h1> found: is this the right page?")
@@ -102,8 +157,18 @@ def extract_blocks(html):
                     blocks.append((heading, joined))
             list_items = []
 
-    for el in h1.find_all_next(["h2", "h3", "h4", "p", "li"]):
-        text = own_text(el) if el.name == "li" else clean(el.get_text(" "))
+    for el in h1.find_all_next(["h2", "h3", "h4", "p", "li", "table"]):
+        if el.find_parent("li"):      # nested bullets and <p> inside bullets: already in the parent's li_text
+            continue
+        if el.find_parent("table"):   # cells are handled by table_text
+            continue
+        if el.name == "table":
+            flush_list()
+            text = table_text(el)
+            if text:
+                blocks.append((heading, text))
+            continue
+        text = li_text(el) if el.name == "li" else clean(el.get_text(" "))
         if not text:
             continue
         if text.startswith(STOP_MARKERS):
@@ -117,11 +182,6 @@ def extract_blocks(html):
             heading = text.rstrip(":")
             continue
         if el.name == "li":
-            if el.find("p"):          # its <p> children are picked up on their own
-                continue
-            list_items.append(text)
-            continue
-        if el.find_parent("li"):      # a <p> inside a list item belongs to that list
             list_items.append(text)
             continue
         flush_list()
@@ -140,14 +200,30 @@ def split_sentences(text, limit):
         current.append(s)
     if current:
         parts.append(" ".join(current))
+    # never leave a short tail on its own: glue it back onto the part before it
+    if len(parts) > 1 and len(parts[-1].split()) < 2 * MIN_WORDS:
+        tail = parts.pop()
+        parts[-1] += " " + tail
     return parts
 
 
 def to_chunks(page_title, blocks):
+    # drop navigation-only sections (FAQs, EU legislation, See also, ...)
+    blocks = [(h, t) for h, t in blocks if not (h and h.startswith(SKIP_HEADINGS))]
+    # drop a block whose words already sit inside another block (duplicate fragments);
+    # compare words only, so stray brackets or full stops don't hide a duplicate
+    words = lambda s: " " + re.sub(r"[^a-z0-9]+", " ", s.lower()).strip() + " "
+    norm = [words(t) for _, t in blocks]
+    blocks = [b for i, b in enumerate(blocks)
+              if not any(j != i and norm[i] != norm[j] and norm[i] in norm[j]
+                         for j in range(len(blocks)))]
     # merge short blocks into the next block of the same section
     merged = []
     for heading, text in blocks:
-        if merged and merged[-1][0] == heading and len(merged[-1][1].split()) < MIN_WORDS:
+        prev_short_or_unfinished = merged and (
+            len(merged[-1][1].split()) < MIN_WORDS
+            or not re.search(r"[.!?)\"”]$", merged[-1][1]))     # e.g. "...cannot be higher than"
+        if prev_short_or_unfinished and merged[-1][0] == heading:
             merged[-1] = (heading, merged[-1][1] + " " + text)
         else:
             merged.append((heading, text))
