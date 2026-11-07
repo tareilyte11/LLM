@@ -44,6 +44,28 @@
    "evidence": "rail.txt#26 (25%/50% delay compensation) is not in the top 3; the near-duplicate rail.txt#36 (missed connection) was retrieved instead, and the answer also misreads it, giving 50% for a 90-minute delay where #36 says 25%."
   },
   {
+   "id": 2,
+   "question": "Does my phone bill go up when I call home during a trip elsewhere in the EU?",
+   "lang": "en",
+   "kind": "paraphrase",
+   "gold_chunks": [
+    "roaming.txt#1"
+   ],
+   "gold_answer": "No. Calls, texts and data in another EU country are charged at domestic rates ('roam like at home').",
+   "written_before_running": true,
+   "retrieved": [
+    "roaming.txt#6",
+    "roaming.txt#1",
+    "roaming.txt#11"
+   ],
+   "answer": "No, your phone bill does not go up when you call home during a trip elsewhere in the EU because calls, texts, and data use are charged at domestic rates [roaming.txt#1].",
+   "citations": [
+    "roaming.txt#1"
+   ],
+   "verdict": null,
+   "evidence": ""
+  },
+  {
    "id": 3,
    "question": "I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?",
    "lang": "en",

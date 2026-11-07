@@ -19,6 +19,25 @@ Retrieved chunk texts:
 
 > **[rail.txt#37]** Rail passenger rights – Compensation – delay due to a missed connection. The railway undertaking must pay this compensation within 1 month of your request. You will not receive compensation if: you were informed of a delay before you bought your ticket; the delay due to continuing your journey with a different service or re-routing is less than 1 hour; you opted for a refund of your ticket; the delay was caused by extraordinary circumstances.
 
+## Q2 (paraphrase): Does my phone bill go up when I call home during a trip elsewhere in the EU?
+
+- **gold chunks:** ['roaming.txt#1']
+- **gold answer:** No. Calls, texts and data in another EU country are charged at domestic rates ('roam like at home').
+- **retrieved (top 3):** ['roaming.txt#6', 'roaming.txt#1', 'roaming.txt#11']
+- **top 10 with scores:** [['roaming.txt#6', 0.6254], ['roaming.txt#1', 0.6133], ['roaming.txt#11', 0.6024], ['roaming.txt#22', 0.5984], ['roaming.txt#4', 0.5896], ['roaming.txt#25', 0.5783], ['roaming.txt#27', 0.5737], ['roaming.txt#3', 0.5604], ['roaming.txt#14', 0.5447], ['roaming.txt#8', 0.5362]]
+- **answer:** No, your phone bill does not go up when you call home during a trip elsewhere in the EU because calls, texts, and data use are charged at domestic rates [roaming.txt#1].
+- **citations:** ['roaming.txt#1']
+- **what the log decides:** read the answer: correct or generation_failure
+- **your verdict so far:** (not judged yet)
+
+Retrieved chunk texts:
+
+> **[roaming.txt#6]** Mobile roaming – What is roaming? As long as you spend more time at home than abroad, or you use your mobile phone more at home than abroad, you are considered to be roaming. You will therefore be charged domestic prices for your calls, text and data use in the EU. This is considered a "fair use of roaming services".
+
+> **[roaming.txt#1]** Mobile roaming. When you travel outside your home country to another EU country , you don't have to pay any additional charges to use your mobile phone. This is known as "roaming" or "roam like at home". Your calls (to mobile and fixed phones), text messages (SMS) and data use (web browsing, music and video streaming etc.) are charged at domestic rates, i.e. the same price as calls, texts and data within your home country.
+
+> **[roaming.txt#11]** Mobile roaming – I have a pre-paid card. If you have a pre-paid card (meaning that you pay in advance for using your mobile phone) you can use your phone in other EU countries without paying extra. However, if you pay per unit and your domestic unit price for data is less than €1.30 per GB, your mobile operator may apply a data limit while you're roaming.
+
 ## Q3 (paraphrase): I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?
 
 - **gold chunks:** ['healthcare.txt#9', 'healthcare.txt#10']

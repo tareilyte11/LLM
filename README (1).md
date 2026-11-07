@@ -78,7 +78,7 @@ stemming. Dense retrieval was unchanged, as expected.
   mention that flights, trains and buses have different rules.
 ## Limitations
  
-- Ten questions and one generator; differences of one question move a metric by 10 to 12.5 points.
+- Eleven questions and one generator; differences of one question move a metric by 10 to 12.5 points.
 - The stop-word change was chosen after seeing the first retrieval results.
 - The pages describe EU rules as of their "last checked" dates (January to October 2026);
   national rules and later changes are not covered.
