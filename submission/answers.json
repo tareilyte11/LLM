@@ -1,0 +1,239 @@
+{
+ "corpus": {
+  "type": "own",
+  "description": "Ten Your Europe pages (European Commission, CC BY 4.0) on passenger rights (air, rail, bus, package travel), shopping (guarantees, returns, delivery), roaming, health cover abroad and consumer dispute resolution; downloaded November 2026.",
+  "documents": 10,
+  "chunking": {
+   "unit": "paragraph",
+   "size": 1,
+   "overlap": 0,
+   "rule": "one paragraph per chunk, split on blank lines; built by build_documents.py (page title and section heading prepended, blocks over 130 words split at sentence boundaries)"
+  }
+ },
+ "retrieval": {
+  "system": "dense",
+  "model": "embeddinggemma",
+  "top_k": 3
+ },
+ "generation": {
+  "model": "qwen3:8b",
+  "temperature": 0,
+  "prompt_file": "code/prompts.md"
+ },
+ "questions": [
+  {
+   "id": 1,
+   "question": "My train got in 90 minutes late. What share of my fare can I claim?",
+   "lang": "en",
+   "kind": "paraphrase",
+   "gold_chunks": [
+    "rail.txt#26"
+   ],
+   "gold_answer": "25% of the ticket price, because the delay is between 1 and 2 hours (50% from 2 hours).",
+   "written_before_running": true,
+   "retrieved": [
+    "rail.txt#21",
+    "rail.txt#36",
+    "rail.txt#37"
+   ],
+   "answer": "You can claim 50% of your ticket price as compensation for the 90-minute delay [rail.txt#36].",
+   "citations": [
+    "rail.txt#36"
+   ],
+   "verdict": "retrieval_failure",
+   "evidence": "rail.txt#26 (25%/50% delay compensation) is not in the top 3; the near-duplicate rail.txt#36 (missed connection) was retrieved instead, and the answer also misreads it, giving 50% for a 90-minute delay where #36 says 25%."
+  },
+  {
+   "id": 3,
+   "question": "I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?",
+   "lang": "en",
+   "kind": "paraphrase",
+   "gold_chunks": [
+    "healthcare.txt#9",
+    "healthcare.txt#10"
+   ],
+   "gold_answer": "No. The EHIC does not cover rescue or repatriation; you need separate insurance.",
+   "written_before_running": true,
+   "retrieved": [
+    "healthcare.txt#10",
+    "healthcare.txt#9",
+    "healthcare.txt#1"
+   ],
+   "answer": "No, your EU health card will not pay for the cost of your rescue. The European Health Insurance Card (EHIC) does not cover rescue and repatriation costs [healthcare.txt#9].",
+   "citations": [
+    "healthcare.txt#9"
+   ],
+   "verdict": "correct",
+   "evidence": "healthcare.txt#9 says the EHIC does not cover rescue and repatriation; the answer says no and cites #9."
+  },
+  {
+   "id": 4,
+   "question": "How much compensation for arriving 4 hours late on a 1 200 km flight?",
+   "lang": "en",
+   "kind": "identifier",
+   "gold_chunks": [
+    "air.txt#35"
+   ],
+   "gold_answer": "250 EUR (flights of 1 500 km or less, delay at arrival of 3 hours or more).",
+   "written_before_running": true,
+   "retrieved": [
+    "air.txt#35",
+    "air.txt#36",
+    "air.txt#33"
+   ],
+   "answer": "The compensation for arriving 4 hours late on a 1 200 km flight is 250 EUR [air.txt#35].",
+   "citations": [
+    "air.txt#35"
+   ],
+   "verdict": "correct",
+   "evidence": "air.txt#35 gives 250 EUR for flights of 1 500 km or less delayed 3 hours or more; the answer says 250 EUR and cites #35."
+  },
+  {
+   "id": 5,
+   "question": "Is the EUR 3 customs duty charged per parcel or per item?",
+   "lang": "en",
+   "kind": "identifier",
+   "gold_chunks": [
+    "delivery.txt#5",
+    "delivery.txt#7"
+   ],
+   "gold_answer": "Per item (a 'goods item' with the same commodity code and origin), not per parcel; it applies to orders up to EUR 150 from outside the EU.",
+   "written_before_running": true,
+   "retrieved": [
+    "delivery.txt#7",
+    "delivery.txt#5",
+    "delivery.txt#8"
+   ],
+   "answer": "The EUR 3 customs duty is charged per item, not per parcel [delivery.txt#7].",
+   "citations": [
+    "delivery.txt#7"
+   ],
+   "verdict": "correct",
+   "evidence": "delivery.txt#7 says the duty is EUR 3 per item and not per parcel; the answer matches and cites #7."
+  },
+  {
+   "id": 6,
+   "question": "Can I cancel a concert ticket I bought online within 14 days?",
+   "lang": "en",
+   "kind": "detail",
+   "gold_chunks": [
+    "returns.txt#3"
+   ],
+   "gold_answer": "No. The 14-day cooling-off period does not apply to concert tickets.",
+   "written_before_running": true,
+   "retrieved": [
+    "returns.txt#3",
+    "returns.txt#1",
+    "package.txt#11"
+   ],
+   "answer": "No, you cannot cancel a concert ticket you bought online within 14 days [returns.txt#3]. This is because the 14-day cooling-off period does not apply to concert tickets.",
+   "citations": [
+    "returns.txt#3"
+   ],
+   "verdict": "correct",
+   "evidence": "returns.txt#3 lists concert tickets as an exception to the 14-day cooling-off period; the answer says no and cites #3, not the general rule in #1."
+  },
+  {
+   "id": 7,
+   "question": "How long do I have to complain to a coach company?",
+   "lang": "en",
+   "kind": "near_duplicate",
+   "gold_chunks": [
+    "bus.txt#4"
+   ],
+   "gold_answer": "Within 3 months of the scheduled service; the company must react within 1 month and give a final reply within 3 months.",
+   "written_before_running": true,
+   "retrieved": [
+    "bus.txt#4",
+    "bus.txt#6",
+    "bus.txt#14"
+   ],
+   "answer": "You have 3 months from the date of the scheduled service during which the problem occurred to complain to the coach company [bus.txt#4].",
+   "citations": [
+    "bus.txt#4"
+   ],
+   "verdict": "correct",
+   "evidence": "bus.txt#4 says to complain within 3 months of the scheduled service; the answer matches and cites #4."
+  },
+  {
+   "id": 8,
+   "question": "Can I get my money back if my trip is cancelled?",
+   "lang": "en",
+   "kind": "ambiguous",
+   "gold_chunks": [
+    "air.txt#8",
+    "rail.txt#11",
+    "bus.txt#9",
+    "package.txt#13"
+   ],
+   "gold_answer": "It depends on the type of trip. Flight: choice of reimbursement, re-routing or return. Train (arriving over 60 minutes late): refund within 30 days or re-routing. Long-distance bus: reimbursement within 14 days or re-routing. Package cancelled by the organiser: refund and, where appropriate, compensation. A good answer names the cases or asks which type of trip.",
+   "written_before_running": true,
+   "retrieved": [
+    "package.txt#14",
+    "package.txt#13",
+    "air.txt#44"
+   ],
+   "answer": "Yes, you can get a full refund if your trip is cancelled due to exceptional circumstances such as a natural disaster or serious security problems [package.txt#14]. If the cancellation is due to normal circumstances, you may be entitled to a refund and compensation [package.txt#13].",
+   "citations": [
+    "package.txt#13",
+    "package.txt#14"
+   ],
+   "verdict": "generation_failure",
+   "evidence": "Only package.txt#13 of the four gold chunks was retrieved; the answer treats 'trip' as a package holiday and never says that flights, trains and buses have different rules."
+  },
+  {
+   "id": 9,
+   "question": "What are my rights if my ferry is cancelled?",
+   "lang": "en",
+   "kind": "no_answer",
+   "gold_chunks": [],
+   "gold_answer": "",
+   "written_before_running": true,
+   "retrieved": [
+    "bus.txt#8",
+    "air.txt#9",
+    "bus.txt#17"
+   ],
+   "answer": "Not in the documents.",
+   "citations": [],
+   "verdict": "correct_refusal",
+   "evidence": "Exact refusal line, nothing cited; the retrieved bus and air cancellation chunks were not used."
+  },
+  {
+   "id": 10,
+   "question": "Do I get compensation if my taxi to the airport is late?",
+   "lang": "en",
+   "kind": "no_answer",
+   "gold_chunks": [],
+   "gold_answer": "",
+   "written_before_running": true,
+   "retrieved": [
+    "air.txt#38",
+    "air.txt#12",
+    "air.txt#46"
+   ],
+   "answer": "Not in the documents.",
+   "citations": [],
+   "verdict": "correct_refusal",
+   "evidence": "Exact refusal line, nothing cited; the retrieved air delay chunks were not used."
+  },
+  {
+   "id": 11,
+   "question": "How much alcohol can I bring back tax-free from another EU country?",
+   "lang": "en",
+   "kind": "no_answer",
+   "gold_chunks": [],
+   "gold_answer": "",
+   "written_before_running": true,
+   "retrieved": [
+    "delivery.txt#5",
+    "delivery.txt#7",
+    "roaming.txt#14"
+   ],
+   "answer": "Not in the documents.",
+   "citations": [],
+   "verdict": "correct_refusal",
+   "evidence": "Exact refusal line, nothing cited; the EUR 3 customs duty chunks were not used."
+  }
+ ]
+}
