@@ -1,0 +1,115 @@
+{
+  "description": "Hand-written questions for the Your Europe corpus (youreurope_handbook.json, 264 chunks). Gold written before any retrieval run. 'gold' = passage ids for the retrieval script; 'gold_chunks' = the same chunks as notebook ids; an empty list means the documents do not answer the question.",
+  "queries": [
+    {
+      "id": 1,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "My train got in 90 minutes late. What share of my fare can I claim?",
+      "gold": [90],
+      "gold_chunks": ["rail.txt#26"],
+      "gold_answer": "25% of the ticket price, because the delay is between 1 and 2 hours (50% from 2 hours).",
+      "note": "fare/late vs ticket price/delay; rail.txt#36 (missed connection) has the same percentages and is a distractor"
+    },
+    {
+      "id": 2,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "Does my phone bill go up when I call home during a trip elsewhere in the EU?",
+      "gold": [211],
+      "gold_chunks": ["roaming.txt#1"],
+      "gold_answer": "No. Calls, texts and data in another EU country are charged at domestic rates ('roam like at home').",
+      "note": "phone bill / call home vs roaming / domestic rates"
+    },
+    {
+      "id": 3,
+      "category": "paraphrase",
+      "lang": "en",
+      "query": "I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?",
+      "gold": [248, 249],
+      "gold_chunks": ["healthcare.txt#9", "healthcare.txt#10"],
+      "gold_answer": "No. The EHIC does not cover rescue or repatriation; you need separate insurance.",
+      "note": "brought down the mountain vs rescue; the sample story about Sven also answers it"
+    },
+    {
+      "id": 4,
+      "category": "identifier",
+      "lang": "en",
+      "query": "How much compensation for arriving 4 hours late on a 1 200 km flight?",
+      "gold": [35],
+      "gold_chunks": ["air.txt#35"],
+      "gold_answer": "250 EUR (flights of 1 500 km or less, delay at arrival of 3 hours or more).",
+      "note": "numbers decide it; the denied-boarding table (air.txt#24) and re-routing tables (air.txt#29, #33) are distractors"
+    },
+    {
+      "id": 5,
+      "category": "identifier",
+      "lang": "en",
+      "query": "Is the EUR 3 customs duty charged per parcel or per item?",
+      "gold": [197, 199],
+      "gold_chunks": ["delivery.txt#5", "delivery.txt#7"],
+      "gold_answer": "Per item (a 'goods item' with the same commodity code and origin), not per parcel; it applies to orders up to EUR 150 from outside the EU.",
+      "note": "EUR 3 is the identifier"
+    },
+    {
+      "id": 6,
+      "category": "detail",
+      "lang": "en",
+      "query": "Can I cancel a concert ticket I bought online within 14 days?",
+      "gold": [187],
+      "gold_chunks": ["returns.txt#3"],
+      "gold_answer": "No. The 14-day cooling-off period does not apply to concert tickets.",
+      "note": "returns.txt#1 describes the 14-day right in general and is a distractor; the exception decides it"
+    },
+    {
+      "id": 7,
+      "category": "near_duplicate",
+      "lang": "en",
+      "query": "How long do I have to complain to a coach company?",
+      "gold": [115],
+      "gold_chunks": ["bus.txt#4"],
+      "gold_answer": "Within 3 months of the scheduled service; the company must react within 1 month and give a final reply within 3 months.",
+      "note": "rail.txt#6 also says 3 months for trains; air.txt#23 has 7/21 days for luggage"
+    },
+    {
+      "id": 8,
+      "category": "ambiguous",
+      "lang": "en",
+      "query": "Can I get my money back if my trip is cancelled?",
+      "gold": [8, 75, 120, 147],
+      "gold_chunks": ["air.txt#8", "rail.txt#11", "bus.txt#9", "package.txt#13"],
+      "gold_answer": "It depends on the type of trip. Flight: choice of reimbursement, re-routing or return. Train (arriving over 60 minutes late): refund within 30 days or re-routing. Long-distance bus: reimbursement within 14 days or re-routing. Package cancelled by the organiser: refund and, where appropriate, compensation. A good answer names the cases or asks which type of trip.",
+      "note": "trip type not stated; with k = 3 at most three of the four gold chunks can be retrieved"
+    },
+    {
+      "id": 9,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "What are my rights if my ferry is cancelled?",
+      "gold": [],
+      "gold_chunks": [],
+      "gold_answer": "",
+      "note": "the ship passenger page was deliberately left out; roaming.txt#25 mentions ships and bus/rail cancellation chunks look relevant"
+    },
+    {
+      "id": 10,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "Do I get compensation if my taxi to the airport is late?",
+      "gold": [],
+      "gold_chunks": [],
+      "gold_answer": "",
+      "note": "taxis are not covered; air delay and compensation chunks are distractors"
+    },
+    {
+      "id": 11,
+      "category": "no_answer",
+      "lang": "en",
+      "query": "How much alcohol can I bring back tax-free from another EU country?",
+      "gold": [],
+      "gold_chunks": [],
+      "gold_answer": "",
+      "note": "not in the corpus; the EUR 3 customs duty chunks are distractors"
+    }
+  ]
+}
