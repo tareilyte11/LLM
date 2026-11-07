@@ -2,28 +2,6 @@
 “Know your rights” assistant for your Europe rights.
 """
 
-"""
-Build the mid-term corpus from ten Your Europe pages (European Commission).
-
-Outputs
-  my_documents/<name>.txt   one document per file, one paragraph per chunk,
-                            blank line between paragraphs (what the week 7
-                            notebook's read_documents() expects)
-  youreurope_handbook.json  the same paragraphs in the Lecture 6 format
-                            {"passages": [{"id", "section", "lang", "text"}]}
-                            so the BM25 / dense / hybrid script runs unchanged
-  SOURCES.md                URL, page date, download date, licence, changes made
-                            (kept out of my_documents/ so it is never indexed)
-  raw_html/<name>.html      cached downloads; delete one to fetch it again
-
-Run:   python build_documents.py
-If a page will not download (e.g. 403), open it in your browser, save it as
-"Webpage, HTML only" to raw_html/<name>.html, and run the script again.
-
-Licence: Your Europe content is reusable under CC BY 4.0 (Commission Decision
-2011/833/EU) with attribution and an indication of changes; SOURCES.md does both.
-"""
-
 import json
 import re
 import statistics

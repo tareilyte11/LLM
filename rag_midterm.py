@@ -20,7 +20,7 @@ PREFIX = {"query": "task: search result | query: ", "doc": "title: none | text: 
 TOP_K = 3
 TEMPERATURE = 0
 
-DROP_IDS = {2}   # the brief asks for ten questions; question 2 (roaming) is dropped
+DROP_IDS = set()
 
 REFUSAL = "Not in the documents"
 
@@ -51,6 +51,7 @@ Answer:"""
 #           citation_failure, correct_refusal, false_answer
 JUDGEMENTS = {
     1: ("retrieval_failure", "rail.txt#26 (25%/50% delay compensation) is not in the top 3; the near-duplicate rail.txt#36 (missed connection) was retrieved instead, and the answer also misreads it, giving 50% for a 90-minute delay where #36 says 25%."),
+    2: ("correct", "roaming.txt#1 says calls, texts and data in another EU country are charged at domestic rates; the answer says no and cites #1."),
     3: ("correct", "healthcare.txt#9 says the EHIC does not cover rescue and repatriation; the answer says no and cites #9."),
     4: ("correct", "air.txt#35 gives 250 EUR for flights of 1 500 km or less delayed 3 hours or more; the answer says 250 EUR and cites #35."),
     5: ("correct", "delivery.txt#7 says the duty is EUR 3 per item and not per parcel; the answer matches and cites #7."),
