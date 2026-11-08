@@ -354,12 +354,6 @@ for item in queries:
     else:
         print("Empty or missing gold; excluded from metric averages.")
 
-with open("results/hybrid_rankings_before.json", "w", encoding="utf-8") as f:
-    json.dump(hybrid_rankings, f, ensure_ascii=False, indent=2)
-
-with open("results/hybrid_evaluation_before.json", "w", encoding="utf-8") as f:
-    json.dump(hybrid_evaluation, f, ensure_ascii=False, indent=2)
-
 answerable = [
     row for row in hybrid_evaluation if row["recall_at_10"] is not None
 ]

@@ -62,8 +62,8 @@
    "citations": [
     "roaming.txt#1"
    ],
-   "verdict": null,
-   "evidence": ""
+   "verdict": "correct",
+   "evidence": "roaming.txt#1 says calls, texts and data in another EU country are charged at domestic rates; the answer says no and cites #1."
   },
   {
    "id": 3,

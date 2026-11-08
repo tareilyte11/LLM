@@ -28,7 +28,7 @@ Retrieved chunk texts:
 - **answer:** No, your phone bill does not go up when you call home during a trip elsewhere in the EU because calls, texts, and data use are charged at domestic rates [roaming.txt#1].
 - **citations:** ['roaming.txt#1']
 - **what the log decides:** read the answer: correct or generation_failure
-- **your verdict so far:** (not judged yet)
+- **your verdict so far:** correct
 
 Retrieved chunk texts:
 

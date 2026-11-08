@@ -16,7 +16,7 @@ LOG = Path("results/run_log.json")
 
 OLLAMA = "http://localhost:11434"
 EMBED, GEN = "embeddinggemma", "qwen3:8b"
-PREFIX = {"query": "task: search result | query: ", "doc": "title: none | text: "}  # model card; Ollama adds nothing
+PREFIX = {"query": "task: search result | query: ", "doc": "title: none | text: "}
 TOP_K = 3
 TEMPERATURE = 0
 
@@ -63,17 +63,13 @@ CORPUS_DESCRIPTION = ("Ten Your Europe pages (European Commission, CC BY 4.0) on
                       "(air, rail, bus, package travel), shopping (guarantees, returns, delivery), roaming, "
                       "health cover abroad and consumer dispute resolution; downloaded November 2026.")
 
-
-# ---------------------------------------------------------------- pipeline
 def read_documents(folder):
-    """One record per paragraph: id = <file>#<n>, the address the answer will cite."""
     chunks = []
     for f in sorted(Path(folder).glob("*.txt")):
         paras = [p.strip() for p in re.split(r"\n\s*\n", f.read_text(encoding="utf-8")) if p.strip()]
         chunks += [{"id": f"{f.name}#{i}", "document": f.name, "lang": "en", "text": p}
                    for i, p in enumerate(paras, start=1)]
     return chunks
-
 
 def embed(texts, kind):
     r = requests.post(f"{OLLAMA}/api/embed", timeout=600,
@@ -82,7 +78,6 @@ def embed(texts, kind):
     v = np.array(r.json()["embeddings"], dtype=np.float32)
     return v / np.linalg.norm(v, axis=1, keepdims=True)
 
-
 def generate(prompt):
     r = requests.post(f"{OLLAMA}/api/generate", timeout=600,
                       json={"model": GEN, "prompt": prompt, "stream": False, "think": False,
@@ -90,7 +85,6 @@ def generate(prompt):
     r.raise_for_status()
     answer = re.sub(r"<think>.*?</think>", "", r.json()["response"], flags=re.S).strip()
     return answer
-
 
 def citations(answer):
     return sorted(set(re.findall(r"\[([a-z]+\.txt#\d+)\]", answer)))
@@ -101,7 +95,6 @@ def is_refusal(answer):
 
 
 def auto_hint(q, retrieved, answer, cites):
-    """What the log alone decides; the rest needs your judgement. Shown in review.md only."""
     gold = set(q["gold_chunks"])
     if not gold:
         return "correct_refusal" if is_refusal(answer) and not cites else "false_answer"
@@ -113,7 +106,6 @@ def auto_hint(q, retrieved, answer, cites):
     if not cites or any(c not in gold for c in cites):
         note += " (cites a non-gold chunk or nothing: citation_failure if the answer is right)"
     return note
-
 
 def run_models(chunks, questions):
     by_id = {c["id"]: c for c in chunks}
@@ -128,11 +120,10 @@ def run_models(chunks, questions):
         answer = generate(PROMPT.format(passages=passages, question=q["question"]))
         rows.append({"id": q["id"], "retrieved": retrieved, "top10": ranking, "answer": answer})
         print(f"Q{q['id']} ({q['kind']}): {q['question']}\n   gold {q['gold_chunks']}  retrieved {retrieved}\n   A: {answer}\n")
-        if not q["gold_chunks"]:   # the discarded prompt, on the questions it is meant to handle
+        if not q["gold_chunks"]:
             alt = generate(PROMPT_DISCARDED.format(passages=passages, question=q["question"]))
             discarded.append({"id": q["id"], "question": q["question"], "answer": alt})
     return {"rows": rows, "discarded": discarded}
-
 
 def load_questions():
     data = json.loads(QUESTIONS_FILE.read_text(encoding="utf-8"))["queries"]
@@ -140,13 +131,12 @@ def load_questions():
              "gold_chunks": q["gold_chunks"], "gold_answer": q["gold_answer"]}
             for q in data if q["id"] not in DROP_IDS]
 
-
 def main():
     chunks = read_documents(DOCS)
     questions = load_questions()
     by_id = {c["id"]: c for c in chunks}
     known = set(by_id)
-    for q in questions:   # a gold id that does not exist would make every verdict meaningless
+    for q in questions:
         missing = [g for g in q["gold_chunks"] if g not in known]
         if missing:
             raise SystemExit(f"Q{q['id']}: gold chunk(s) {missing} not in my_documents/ - rebuild or fix the ids")
@@ -224,7 +214,6 @@ def main():
     print(f"judged {sum(judged.values())}/{len(results)}: {dict(judged)}")
     if sum(judged.values()) < len(results):
         print("next: read review.md, fill in JUDGEMENTS, run again")
-
 
 if __name__ == "__main__":
     main()
