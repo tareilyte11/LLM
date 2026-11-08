@@ -28,7 +28,7 @@ split at sentence boundaries, navigation-only sections and duplicate fragments r
 Requires Python 3 and [Ollama](https://ollama.com) with two models:
  
 ```
-pip install -r requirements.txt
+pip install requests numpy rank-bm25 beautifulsoup4
 ollama pull embeddinggemma
 ollama pull qwen3:8b
 ```
@@ -41,7 +41,7 @@ ollama pull qwen3:8b
    stop-word removal in the BM25 tokenizer; this is the "after" run.
 3. `python rag_midterm.py`: retrieves the top 3 chunks per question, generates the answers and writes
    the files in `submission/`. Run it a second time after filling in the verdicts; it reuses
-   `run_log.json` instead of calling the model again (a copy of the logged run is in `results/`).
+   `results/run_log.json` instead of calling the model again (a copy of the logged run is in `results/`).
 ## Setup
  
 | Parameter | Value |
@@ -68,7 +68,7 @@ which appears in only five chunks, all roaming headings. BM25 Recall@10 rose to 
 to 37.5%: "long" now matches "long-distance", and "complain" does not match "complaint" without
 stemming. Dense retrieval was unchanged, as expected.
  
-**Answers** (11 questions, judged by hand): 5 correct, 3 correct refusals, 1 retrieval failure,
+**Answers** (11 questions, judged by hand): 6 correct, 3 correct refusals, 1 retrieval failure,
 1 generation failure.
  
 - *Retrieval failure (Q1):* the delay-compensation chunk was not retrieved; a near-duplicate chunk
@@ -78,7 +78,7 @@ stemming. Dense retrieval was unchanged, as expected.
   mention that flights, trains and buses have different rules.
 ## Limitations
  
-- Eleven questions and one generator; differences of one question move a metric by 10 to 12.5 points.
+- Eleven questions and one generator; differences of one question move a metric by 9 to 12.5 points.
 - The stop-word change was chosen after seeing the first retrieval results.
 - The pages describe EU rules as of their "last checked" dates (January to October 2026);
   national rules and later changes are not covered.

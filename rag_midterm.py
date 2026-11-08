@@ -202,9 +202,10 @@ def main():
           f"Exact refusals: final prompt {final_refusals}/{len(disc)}, discarded variant {alt_refusals}/{len(disc)}.\n",
           "| question | final prompt | discarded variant |", "|---|---|---|"]
     md += [f"| Q{d['id']}: {d['question']} | {rows[d['id']]['answer']} | {d['answer']} |" for d in disc]
-    md += ["", "**Reason for discarding:** without an exact refusal line, a no-answer reply cannot be checked "
-               "by equality, and a hedge that still asserts something counts as a false answer. "
-               "*(Edit this sentence after reading the table above.)*\n"]
+    md += ["", "**Reason for discarding:** the variant gave the exact refusal line 0/3 times. "
+               "On Q10 it asserted that a late taxi could lead to compensation and cited air.txt#12, "
+               "which is a false answer; on Q9 and Q11 it refused in its own words, which an equality "
+               "check cannot detect.\n"]
     (OUT / "code" / "prompts.md").write_text("\n".join(md), encoding="utf-8")
     shutil.copy(__file__, OUT / "code" / Path(__file__).name)
     Path("review.md").write_text("\n".join(review), encoding="utf-8")
