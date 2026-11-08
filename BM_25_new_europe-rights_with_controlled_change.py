@@ -3,6 +3,27 @@ import string
 import requests
 import numpy as np
 from rank_bm25 import BM25Okapi
+import sys
+from pathlib import Path
+
+
+class Tee:
+    """Writes everything that is printed both to the screen and to a file."""
+    def __init__(self, path):
+        Path(path).parent.mkdir(exist_ok=True)
+        self.file = open(path, "w", encoding="utf-8")
+        self.terminal = sys.stdout
+
+    def write(self, text):
+        self.terminal.write(text)
+        self.file.write(text)
+
+    def flush(self):
+        self.terminal.flush()
+        self.file.flush()
+
+
+sys.stdout = Tee("results/retrieval_after.txt")
 
 # 1. Load the handbook
 with open("youreurope_handbook.json", encoding="utf-8") as f:
@@ -344,10 +365,10 @@ for item in queries:
     else:
         print("Empty or missing gold; excluded from metric averages.")
 
-with open("hybrid_rankings.json", "w", encoding="utf-8") as f:
+with open("results/hybrid_rankings_after.json", "w", encoding="utf-8") as f:
     json.dump(hybrid_rankings, f, ensure_ascii=False, indent=2)
 
-with open("hybrid_evaluation.json", "w", encoding="utf-8") as f:
+with open("results/hybrid_evaluation_after.json", "w", encoding="utf-8") as f:
     json.dump(hybrid_evaluation, f, ensure_ascii=False, indent=2)
 
 answerable = [

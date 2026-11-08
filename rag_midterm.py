@@ -12,7 +12,7 @@ import requests
 DOCS = Path("my_documents")
 QUESTIONS_FILE = Path("youreurope_queries.json")
 OUT = Path("submission")
-LOG = Path("run_log.json")
+LOG = Path("results/run_log.json")
 
 OLLAMA = "http://localhost:11434"
 EMBED, GEN = "embeddinggemma", "qwen3:8b"
@@ -45,10 +45,6 @@ Passages:
 Question: {question}
 Answer:"""
 
-# ------------------------------------------------- fill in after run 1 (read review.md)
-# question id: ("verdict", "one evidence sentence naming the chunk or phrase that decides it")
-# verdicts: correct, retrieval_failure, wrong_refusal, generation_failure,
-#           citation_failure, correct_refusal, false_answer
 JUDGEMENTS = {
     1: ("retrieval_failure", "rail.txt#26 (25%/50% delay compensation) is not in the top 3; the near-duplicate rail.txt#36 (missed connection) was retrieved instead, and the answer also misreads it, giving 50% for a 90-minute delay where #36 says 25%."),
     2: ("correct", "roaming.txt#1 says calls, texts and data in another EU country are charged at domestic rates; the answer says no and cites #1."),
@@ -161,6 +157,7 @@ def main():
         print(f"reusing {LOG} (no model calls); delete it to run the models again\n")
     else:
         log = run_models(chunks, questions)
+        LOG.parent.mkdir(exist_ok=True)
         LOG.write_text(json.dumps(log, indent=1, ensure_ascii=False), encoding="utf-8")
 
     rows = {r["id"]: r for r in log["rows"]}
