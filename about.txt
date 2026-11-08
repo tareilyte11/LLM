@@ -1,0 +1,25 @@
+Intrukcijos:
+README.md
+SOURCES.md
+
+Kodai:
+build_documents.py -> 1 žingsnis: interneto puslapius paverčia txt dokumentais.
+BM_25_new_europe-rights.py -> 2 žingsnis: atsakymų į klausimus trim skirtingais būdais (BM, dense ir hybrid) palyginimas (prieš stop words removal).
+BM_25_new_europe-rights_with_controlled_change.py -> 3 žingsnis: atsakymų į klausimus trim skirtingais būdais palyginimas (po stop words removal).
+rag_midterm.py -> 4 žingsnis: atsakymai į klausimus, jų vertinimas ir pateikimo failai.
+
+youreurope_handbook.json -> chunkai atsakymų į klausimus paieškos skriptams.
+youreurope_queries.json -> klausimai ir gold atsakymai.
+
+my_documents/ -> 10 .txt dokumentų, kuriuose ieško atsakymų.
+review.md -> visi 11 klausimų su tuo, ko reikia įvertinti atsakymus: gold atsakymu, rastais chunkais ir jų tekstais, modelio atsakymu ir citatomis. Jį sukuria kodas rag_midterm.py 
+
+FOLDERIS results/ -> paleidimų rezultatai
+retrieval_before.txt -> visa paieškos skripto išvestis be stop words (iš BM_25_new_europe-rights.py)
+retrieval_after.txt -> ta pati išvestis su stop words (iš BM_25_new_europe-rights_with_controlled_change.py)
+run_log.json -> išsaugoti rag_midterm.py rezultatai.
+
+FOLDERIS submission/ -> ką priduoti       
+answers.json -> rezultatai: klausimas, gold atsakymas, gold chunk, kuriuos chunks modelis paėmė, modelio atsakymas ir įvertinimas mūsų.
+corpus/chunks.json -> 264 chunks sukurti iš dokumentų su id, dokumento pavadinimu, kalba, tekstu.
+code/prompts.md -> promtas kurį gavo modelis kaip atsakyti į klausimus.
