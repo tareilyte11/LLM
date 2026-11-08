@@ -68,7 +68,7 @@ which appears in only five chunks, all roaming headings. BM25 Recall@10 rose to 
 to 37.5%: "long" now matches "long-distance", and "complain" does not match "complaint" without
 stemming. Dense retrieval was unchanged, as expected.
  
-**Answers** (10 questions, judged by hand): 5 correct, 3 correct refusals, 1 retrieval failure,
+**Answers** (11 questions, judged by hand): 5 correct, 3 correct refusals, 1 retrieval failure,
 1 generation failure.
  
 - *Retrieval failure (Q1):* the delay-compensation chunk was not retrieved; a near-duplicate chunk
