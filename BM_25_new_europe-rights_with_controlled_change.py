@@ -148,9 +148,18 @@ print(f"\nProcessed {len(queries)} questions.")
 print(f"Questions included in averages: {len(answerable)}")
 
 if answerable:
-    for metric in ("hit_at_1", "hit_at_3", "recall_at_10"):
-        average = sum(row[metric] for row in answerable) / len(answerable)
-        print(f"Mean {metric}: {average:.2%}")
+    total = len(answerable)
+
+    hit1_count = sum(row["hit_at_1"] for row in answerable)
+    hit3_count = sum(row["hit_at_3"] for row in answerable)
+
+    recall10_mean = (
+        sum(row["recall_at_10"] for row in answerable) / total
+    )
+
+    print(f"Hit@1 count: {hit1_count}/{total}")
+    print(f"Hit@3 count: {hit3_count}/{total}")
+    print(f"Mean Recall@10: {recall10_mean:.2%}")
 
 
 #Dense retrieval##############
@@ -256,6 +265,12 @@ for item in queries:
     })
 
     print(f"\nQuestion {item['id']}: {item['query']}")
+    # for rank, result in enumerate(results, start=1):
+    #     print(
+    #         f"Rank {rank}: "
+    #         f"Passage ID: {result['passage_id']}, "
+    #         f"RRF Score: {result['score']:.6f}"
+    # )
     print(f"Retrieved: {retrieved_ids}")
     print(f"Gold: {item['gold']}")
 
@@ -277,9 +292,19 @@ print(f"\nProcessed {len(queries)} questions.")
 print(f"Questions included in averages: {len(answerable)}")
 
 if answerable:
-    for metric in ("hit_at_1", "hit_at_3", "recall_at_10"):
-        average = sum(row[metric] for row in answerable) / len(answerable)
-        print(f"Mean {metric}: {average:.2%}")
+    total = len(answerable)
+
+    hit1_count = sum(row["hit_at_1"] for row in answerable)
+    hit3_count = sum(row["hit_at_3"] for row in answerable)
+
+    recall10_mean = (
+        sum(row["recall_at_10"] for row in answerable) / total
+    )
+
+    print(f"Hit@1 count: {hit1_count}/{total}")
+    print(f"Hit@3 count: {hit3_count}/{total}")
+    print(f"Mean Recall@10: {recall10_mean:.2%}")
+
 
 
 # Hybrid retrieval: BM25 + dense #################
@@ -355,6 +380,13 @@ for item in queries:
     })
 
     print(f"\nQuestion {item['id']}: {item['query']}")
+    # for rank, result in enumerate(results, start=1):
+    #     print(
+    #         f"Rank {rank}: "
+    #         f"Passage ID: {result['passage_id']}, "
+    #         f"RRF Score: {result['score']:.6f}"
+    # )
+
     print(f"Retrieved: {retrieved_ids}")
     print(f"Gold: {item.get('gold', 'not supplied')}")
 
@@ -373,6 +405,15 @@ print(f"\nProcessed {len(queries)} questions with hybrid retrieval.")
 print(f"Questions included in averages: {len(answerable)}")
 
 if answerable:
-    for metric in ("hit_at_1", "hit_at_3", "recall_at_10"):
-        average = sum(row[metric] for row in answerable) / len(answerable)
-        print(f"Mean {metric}: {average:.2%}")
+    total = len(answerable)
+
+    hit1_count = sum(row["hit_at_1"] for row in answerable)
+    hit3_count = sum(row["hit_at_3"] for row in answerable)
+
+    recall10_mean = (
+        sum(row["recall_at_10"] for row in answerable) / total
+    )
+
+    print(f"Hit@1 count: {hit1_count}/{total}")
+    print(f"Hit@3 count: {hit3_count}/{total}")
+    print(f"Mean Recall@10: {recall10_mean:.2%}")
