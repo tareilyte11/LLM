@@ -1,231 +1,89 @@
 
 Question 1: My train got in 90 minutes late. What share of my fare can I claim?
-Retrieved: [78, 88, 126, 254, 69, 175, 99, 87, 252, 86]
+Retrieved: [78, 88, 126, 254, 75, 67, 96, 99, 87, 86]
 Gold: [90]
 Hit@1: 0
 Hit@3: 0
 Recall@10: 0.00%
 
 Question 2: Does my phone bill go up when I call home during a trip elsewhere in the EU?
-Retrieved: [249, 240, 214, 211, 215, 224, 203, 216, 138, 197]
-Gold: [211]
-Hit@1: 0
-Hit@3: 0
-Recall@10: 100.00%
-
-Question 3: I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?
-Retrieved: [249, 245, 242, 55, 243, 241, 198, 165, 247, 223]
-Gold: [248, 249]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 50.00%
-
-Question 4: How much compensation for arriving 4 hours late on a 1 200 km flight?
-Retrieved: [33, 29, 35, 36, 14, 27, 45, 219, 24, 90]
-Gold: [35]
-Hit@1: 0
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 5: Is the EUR 3 customs duty charged per parcel or per item?
-Retrieved: [199, 197, 200, 108, 24, 198, 29, 33, 35, 121]
-Gold: [197, 199]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 6: Can I cancel a concert ticket I bought online within 14 days?
-Retrieved: [185, 84, 48, 215, 15, 138, 120, 91, 101, 80]
-Gold: [187]
-Hit@1: 0
-Hit@3: 0
-Recall@10: 0.00%
-
-Question 7: How long do I have to complain to a coach company?
-Retrieved: [71, 115, 78, 88, 129, 117, 132, 120, 112, 84]
-Gold: [115]
-Hit@1: 0
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 8: Can I get my money back if my trip is cancelled?
-Retrieved: [180, 181, 240, 75, 68, 140, 78, 156, 252, 242]
-Gold: [8, 75, 120, 147]
-Hit@1: 0
-Hit@3: 0
-Recall@10: 25.00%
-
-Question 9: What are my rights if my ferry is cancelled?
-Retrieved: [67, 128, 50, 8, 68, 49, 69, 170, 4, 3]
-Gold: []
-No gold passages; excluded from these metric averages.
-
-Question 10: Do I get compensation if my taxi to the airport is late?
-Retrieved: [37, 27, 48, 19, 181, 151, 22, 8, 55, 46]
-Gold: []
-No gold passages; excluded from these metric averages.
-
-Question 11: How much alcohol can I bring back tax-free from another EU country?
-Retrieved: [195, 252, 219, 211, 183, 191, 248, 228, 240, 73]
-Gold: []
-No gold passages; excluded from these metric averages.
-
-Processed 11 questions.
-Questions included in averages: 8
-Hit@1 count: 2/8
-Hit@3 count: 4/8
-Mean Recall@10: 59.38%
-
-Question 1: My train got in 90 minutes late. What share of my fare can I claim?
-Retrieved: [86, 101, 97, 91, 125, 88, 106, 85, 89, 87]
-Gold: [90]
-Hit@1: 0
-Hit@3: 0
-Recall@10: 0.00%
-
-Question 2: Does my phone bill go up when I call home during a trip elsewhere in the EU?
-Retrieved: [216, 211, 237, 235, 221, 224, 232, 218, 212, 234]
+Retrieved: [249, 240, 211, 214, 138, 216, 224, 215, 185, 248]
 Gold: [211]
 Hit@1: 0
 Hit@3: 1
 Recall@10: 100.00%
 
 Question 3: I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?
-Retrieved: [249, 240, 248, 242, 241, 245, 243, 244, 247, 1]
+Retrieved: [249, 55, 242, 223, 165, 245, 243, 199, 211, 112]
 Gold: [248, 249]
 Hit@1: 1
 Hit@3: 1
-Recall@10: 100.00%
+Recall@10: 50.00%
 
 Question 4: How much compensation for arriving 4 hours late on a 1 200 km flight?
-Retrieved: [17, 36, 33, 29, 52, 18, 27, 12, 20, 45]
+Retrieved: [33, 29, 35, 36, 45, 14, 37, 32, 27, 219]
 Gold: [35]
 Hit@1: 0
-Hit@3: 0
-Recall@10: 0.00%
+Hit@3: 1
+Recall@10: 100.00%
 
 Question 5: Is the EUR 3 customs duty charged per parcel or per item?
-Retrieved: [200, 199, 197, 195, 208, 210, 209, 198, 194, 108]
+Retrieved: [199, 197, 200, 35, 121, 126, 29, 33, 232, 24]
 Gold: [197, 199]
-Hit@1: 0
+Hit@1: 1
 Hit@3: 1
 Recall@10: 100.00%
 
 Question 6: Can I cancel a concert ticket I bought online within 14 days?
-Retrieved: [185, 187, 147, 9, 145, 148, 186, 120, 183, 191]
+Retrieved: [185, 138, 48, 120, 187, 84, 80, 91, 101, 15]
 Gold: [187]
+Hit@1: 0
+Hit@3: 0
+Recall@10: 100.00%
+
+Question 7: How long do I have to complain to a coach company?
+Retrieved: [71, 115, 120, 78, 88, 117, 124, 112, 121, 126]
+Gold: [115]
 Hit@1: 0
 Hit@3: 1
 Recall@10: 100.00%
 
-Question 7: How long do I have to complain to a coach company?
-Retrieved: [115, 70, 71, 117, 58, 238, 60, 260, 175, 118]
-Gold: [115]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 100.00%
-
 Question 8: Can I get my money back if my trip is cancelled?
-Retrieved: [148, 147, 8, 145, 77, 30, 50, 122, 161, 151]
+Retrieved: [180, 181, 75, 240, 78, 68, 120, 140, 85, 156]
 Gold: [8, 75, 120, 147]
 Hit@1: 0
 Hit@3: 1
 Recall@10: 50.00%
 
 Question 9: What are my rights if my ferry is cancelled?
-Retrieved: [8, 128, 146, 9, 148, 147, 76, 119, 42, 50]
+Retrieved: [67, 49, 128, 50, 68, 75, 3, 69, 112, 8]
 Gold: []
-No gold passages; excluded from metric averages.
+No gold passages; excluded from these metric averages.
 
 Question 10: Do I get compensation if my taxi to the airport is late?
-Retrieved: [89, 18, 79, 27, 90, 125, 12, 46, 52, 17]
+Retrieved: [37, 48, 181, 27, 151, 7, 22, 55, 162, 19]
 Gold: []
-No gold passages; excluded from metric averages.
+No gold passages; excluded from these metric averages.
 
 Question 11: How much alcohol can I bring back tax-free from another EU country?
-Retrieved: [200, 197, 108, 183, 191, 224, 199, 260, 184, 192]
+Retrieved: [195, 252, 248, 211, 219, 73, 71, 62, 117, 183]
 Gold: []
-No gold passages; excluded from metric averages.
+No gold passages; excluded from these metric averages.
 
 Processed 11 questions.
 Questions included in averages: 8
 Hit@1 count: 2/8
 Hit@3 count: 6/8
-Mean Recall@10: 68.75%
+Mean Recall@10: 75.00%
 
-Question 1: My train got in 90 minutes late. What share of my fare can I claim?
-Retrieved: [88, 86, 78, 87, 99, 69, 125, 97, 85, 126]
-Gold: [90]
-Hit@1: 0
-Hit@3: 0
-Recall@10: 0.00%
-
-Question 2: Does my phone bill go up when I call home during a trip elsewhere in the EU?
-Retrieved: [211, 216, 224, 214, 240, 215, 249, 235, 221, 234]
-Gold: [211]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 3: I hurt myself skiing and had to be brought down the mountain. Will my EU health card pay for that?
-Retrieved: [249, 242, 245, 241, 243, 247, 240, 244, 248, 55]
-Gold: [248, 249]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 4: How much compensation for arriving 4 hours late on a 1 200 km flight?
-Retrieved: [33, 29, 36, 17, 27, 35, 45, 52, 90, 14]
-Gold: [35]
-Hit@1: 0
-Hit@3: 0
-Recall@10: 100.00%
-
-Question 5: Is the EUR 3 customs duty charged per parcel or per item?
-Retrieved: [199, 200, 197, 108, 198, 24, 210, 208, 209, 35]
-Gold: [197, 199]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 6: Can I cancel a concert ticket I bought online within 14 days?
-Retrieved: [185, 187, 9, 120, 148, 48, 15, 188, 84, 186]
-Gold: [187]
-Hit@1: 0
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 7: How long do I have to complain to a coach company?
-Retrieved: [115, 71, 117, 70, 120, 124, 78, 88, 129, 131]
-Gold: [115]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 100.00%
-
-Question 8: Can I get my money back if my trip is cancelled?
-Retrieved: [8, 75, 9, 30, 148, 78, 122, 180, 181, 128]
-Gold: [8, 75, 120, 147]
-Hit@1: 1
-Hit@3: 1
-Recall@10: 50.00%
-
-Question 9: What are my rights if my ferry is cancelled?
-Retrieved: [128, 8, 50, 9, 146, 69, 119, 4, 76, 67]
-Gold: []
-Empty or missing gold; excluded from metric averages.
-
-Question 10: Do I get compensation if my taxi to the airport is late?
-Retrieved: [27, 37, 19, 46, 52, 48, 151, 89, 18, 17]
-Gold: []
-Empty or missing gold; excluded from metric averages.
-
-Question 11: How much alcohol can I bring back tax-free from another EU country?
-Retrieved: [183, 195, 191, 219, 240, 228, 197, 248, 211, 252]
-Gold: []
-Empty or missing gold; excluded from metric averages.
+Processed 11 questions.
+Questions included in averages: 8
+Hit@1 count: 6/8
+Hit@3 count: 6/8
+Mean Recall@10: 65.62%
 
 Processed 11 questions with hybrid retrieval.
 Questions included in averages: 8
 Hit@1 count: 5/8
 Hit@3 count: 6/8
-Mean Recall@10: 81.25%
+Mean Recall@10: 84.38%

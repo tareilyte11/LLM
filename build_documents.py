@@ -34,8 +34,8 @@ OUT_JSON = Path("youreurope_handbook.json")
 
 # Chunking choices (report these in your parameter table)
 HEADING_PATH = False   # prefix each chunk with "Page title – Section heading."
-MIN_WORDS = 15        # shorter blocks are merged into the next block in the same section
-MAX_WORDS = 130       # longer blocks are split at sentence boundaries
+MIN_WORDS = 15       # shorter blocks are merged into the next block in the same section
+MAX_WORDS = 130      # longer blocks are split at sentence boundaries
 
 STOP_MARKERS = ("Last checked", "Share this page", "Feedback on quality")
 BOILERPLATE = {

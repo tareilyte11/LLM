@@ -51,7 +51,7 @@ tokenized_corpus = [tokenize(doc) for doc in corpus]
 bm25 = BM25Okapi(
     tokenized_corpus,
     k1=1.5,
-    b=0.75,
+    b=0.25,
     epsilon=0.25,
 )
 
@@ -152,7 +152,7 @@ if answerable:
 
 #Dense retrieval##############
 
-MODEL = "embeddinggemma"
+MODEL = "qwen3-embedding:0.6b"
 EMBED_URL = "http://localhost:11434/api/embed"
 
 
@@ -252,16 +252,16 @@ for item in queries:
         "recall_at_10": recall_at_10,
     })
 
-    print(f"\nQuestion {item['id']}: {item['query']}")
-    print(f"Retrieved: {retrieved_ids}")
-    print(f"Gold: {item['gold']}")
+    # print(f"\nQuestion {item['id']}: {item['query']}")
+    # print(f"Retrieved: {retrieved_ids}")
+    # print(f"Gold: {item['gold']}")
 
-    if gold_ids:
-        print(f"Hit@1: {hit_at_1}")
-        print(f"Hit@3: {hit_at_3}")
-        print(f"Recall@10: {recall_at_10:.2%}")
-    else:
-        print("No gold passages; excluded from metric averages.")
+    # if gold_ids:
+    #     print(f"Hit@1: {hit_at_1}")
+    #     print(f"Hit@3: {hit_at_3}")
+    #     print(f"Recall@10: {recall_at_10:.2%}")
+    # else:
+    #     print("No gold passages; excluded from metric averages.")
 
 
 # 7. Print averages for questions with nonempty gold lists.
@@ -360,16 +360,16 @@ for item in queries:
         "recall_at_10": recall_at_10,
     })
 
-    print(f"\nQuestion {item['id']}: {item['query']}")
-    print(f"Retrieved: {retrieved_ids}")
-    print(f"Gold: {item.get('gold', 'not supplied')}")
+    # print(f"\nQuestion {item['id']}: {item['query']}")
+    # print(f"Retrieved: {retrieved_ids}")
+    # print(f"Gold: {item.get('gold', 'not supplied')}")
 
-    if gold_ids:
-        print(f"Hit@1: {hit_at_1}")
-        print(f"Hit@3: {hit_at_3}")
-        print(f"Recall@10: {recall_at_10:.2%}")
-    else:
-        print("Empty or missing gold; excluded from metric averages.")
+    # if gold_ids:
+    #     print(f"Hit@1: {hit_at_1}")
+    #     print(f"Hit@3: {hit_at_3}")
+    #     print(f"Recall@10: {recall_at_10:.2%}")
+    # else:
+    #     print("Empty or missing gold; excluded from metric averages.")
 
 answerable = [
     row for row in hybrid_evaluation if row["recall_at_10"] is not None

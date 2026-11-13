@@ -30,7 +30,7 @@ tokenized_corpus = [tokenize(doc) for doc in corpus]
 bm25 = BM25Okapi(
     tokenized_corpus,
     k1=1.5,
-    b=0.75,
+    b=0.25,
     epsilon=0.25,
 )
 
@@ -131,7 +131,7 @@ if answerable:
 
 #Dense retrieval##############
 
-MODEL = "embeddinggemma"
+MODEL = "qwen3-embedding:0.6b"
 EMBED_URL = "http://localhost:11434/api/embed"
 
 
